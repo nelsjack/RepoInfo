@@ -8,10 +8,12 @@ function App() {
   const [repos, setRepos] = useState([]);
   const [details, setDetails] = useState({});
   const [detailsLoading, setDetailsLoading] = useState(false);
+  const [errorStatus, setErrorStatus] = useState("");
 
   useEffect(() => {
     setRepos([]);
     setDetails({});
+    setErrorStatus("")
   }, [username]);
 
   function handleSubmit(e) {
@@ -29,7 +31,7 @@ function App() {
           if (Array.isArray(res)) {
             setRepos(res)
           } else {
-            alert("bad input")
+            setErrorStatus("User Not Found")
           }
         })
       })
@@ -37,7 +39,7 @@ function App() {
 
   function renderRepo(repo) {
     return (
-        <div className="row" onClick={() => getDetails(repo.name)} key={repo.id}>
+        <div className="repo" onClick={() => getDetails(repo.name)} key={repo.id}>
           <h2 className="repo-name">
             {repo.name}
           </h2>
@@ -58,8 +60,7 @@ function App() {
  }
 
   return (
-    <div className="page">
-      <div className="langing-page-container">
+      <div className="landing-page-container">
           <div className="form">
             <form className="form">
               <input
@@ -70,13 +71,13 @@ function App() {
               />
               <button className="button" onClick={handleSubmit}>{loading ? "Searching..." : "Search"}</button>
             </form>
-            <div className="result-container">
+          </div>
+          <div className="result-container">
+          <h2 className="input-error">{errorStatus}</h2>
               {repos.map(renderRepo)}
-            </div>
+          </div>
           <RepoDetails details={details} loading={detailsLoading} />
-        </div>
       </div>
-    </div>
   );
 }
 

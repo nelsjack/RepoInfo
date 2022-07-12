@@ -1,0 +1,55 @@
+body {
+    background-color: #1c2c47;
+    font-family: 'Lato';
+    font-size: large;
+}
+
+.landing-page-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form {
+    display: flex;
+    justify-content: space-evenly;
+    width: 300px;
+    margin-top: 2%;
+}
+
+.input {
+    border-style: hidden;
+    width: 200px;
+    height: 20px;
+    border-radius: 5px;
+}
+
+.button {
+    height: 20px;
+}
+
+.input-error {
+    color: #e3d4b9;
+}
+
+.repo-details-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 2% 15% 0% 0%;
+    color: #e3d4b9;
+}
+
+.repo {
+    text-align: center;
+    cursor: pointer;
+    color: #e3d4b9;
+}
+
+.repo:hover {
+    background-color: rgba(102, 99, 99, 0.39);
+}
