@@ -61,12 +61,13 @@ function App() {
 
   return (
       <div className="landing-page-container">
+        <h1 className="title">GitHub Repo Finder</h1>
           <div className="form">
             <form className="form">
               <input
                 className="input"
                 value={username}
-                placeholder="GitHub Username"
+                placeholder=" GitHub Username"
                 onChange={e => setUsername(e.target.value)}
               />
               <button className="button" onClick={handleSubmit}>{loading ? "Searching..." : "Search"}</button>

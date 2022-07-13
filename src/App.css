@@ -15,7 +15,6 @@ body {
     display: flex;
     justify-content: space-evenly;
     width: 300px;
-    margin-top: 2%;
 }
 
 .input {
@@ -52,4 +51,8 @@ body {
 
 .repo:hover {
     background-color: rgba(102, 99, 99, 0.39);
+}
+
+.title {
+    color: #e3d4b9;
 }
