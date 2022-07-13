@@ -1,4 +1,4 @@
-function RepoDetails({ details, loading}) {
+function RepoDetails({ details }) {
 
     if (details.hasOwnProperty('id')) {
         return (
