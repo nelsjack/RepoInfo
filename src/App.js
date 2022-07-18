@@ -10,6 +10,8 @@ function App() {
   const [detailsLoading, setDetailsLoading] = useState(false);
   const [errorStatus, setErrorStatus] = useState("");
 
+  const githubUrl = "https://api.github.com/";
+
   useEffect(() => {
     setRepos([]);
     setDetails({});
@@ -23,7 +25,7 @@ function App() {
 
   function searchRepos() {
     setLoading(true);
-    fetch(`https://api.github.com/users/${username}/repos`)
+    fetch(`${githubUrl}users/${username}/repos`)//`https://api.github.com/users/${username}/repos`
       .then(response => {
         response.json()
         .then(res => {
@@ -49,7 +51,7 @@ function App() {
 
   function getDetails(repoName) {
     setDetailsLoading(true);
-    fetch(`https://api.github.com/repos/${username}/${repoName}`)
+    fetch(`${githubUrl}repos/${username}/${repoName}`)
       .then(response => {
         response.json()
         .then(res => {
