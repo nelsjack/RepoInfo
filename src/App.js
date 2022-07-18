@@ -11,6 +11,7 @@ function App() {
   const [errorStatus, setErrorStatus] = useState("");
 
   const githubUrl = "https://api.github.com/";
+  const inputPlaceholderText = " GitHub Username"
 
   useEffect(() => {
     setRepos([]);
@@ -25,7 +26,7 @@ function App() {
 
   function searchRepos() {
     setLoading(true);
-    fetch(`${githubUrl}users/${username}/repos`)//`https://api.github.com/users/${username}/repos`
+    fetch(`${githubUrl}users/${username}/repos`)
       .then(response => {
         response.json()
         .then(res => {
@@ -69,7 +70,7 @@ function App() {
               <input
                 className="input"
                 value={username}
-                placeholder=" GitHub Username"
+                placeholder={inputPlaceholderText}
                 onChange={e => setUsername(e.target.value)}
               />
               <button className="button" onClick={handleSubmit}>{loading ? "Searching..." : "Search"}</button>
