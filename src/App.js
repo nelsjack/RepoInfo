@@ -36,8 +36,8 @@ function App() {
           } else {
             setErrorStatus("User Not Found")
           }
-        })
-      })
+        }).catch((error) => {return error})
+      }).catch((error) => {return error})
   }
 
   function renderRepo(repo) {
@@ -58,8 +58,8 @@ function App() {
         .then(res => {
           setDetailsLoading(false);
           setDetails(res);
-        });
-      });
+        }).catch((error) => {return error})
+      }).catch((error) => {return error});
  }
 
   return (
