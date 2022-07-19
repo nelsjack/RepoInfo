@@ -2,6 +2,7 @@ body {
     background-color: #1c2c47;
     font-family: 'Lato';
     font-size: large;
+    color: #e3d4b9;
 }
 
 .landing-page-container {
@@ -28,10 +29,6 @@ body {
     height: 20px;
 }
 
-.input-error {
-    color: #e3d4b9;
-}
-
 .repo-details-container {
     display: flex;
     flex-direction: column;
@@ -40,19 +37,13 @@ body {
     top: 0;
     right: 0;
     margin: 2% 15% 0% 0%;
-    color: #e3d4b9;
 }
 
 .repo {
     text-align: center;
     cursor: pointer;
-    color: #e3d4b9;
 }
 
 .repo:hover {
     background-color: rgba(102, 99, 99, 0.39);
-}
-
-.title {
-    color: #e3d4b9;
 }

@@ -7,7 +7,6 @@ function App() {
   const [loading, setLoading] = useState(false);
   const [repos, setRepos] = useState([]);
   const [details, setDetails] = useState({});
-  const [detailsLoading, setDetailsLoading] = useState(false);
   const [errorStatus, setErrorStatus] = useState("");
 
   const githubUrl = "https://api.github.com/";
@@ -51,12 +50,10 @@ function App() {
   }
 
   function getDetails(repoName) {
-    setDetailsLoading(true);
     fetch(`${githubUrl}repos/${username}/${repoName}`)
       .then(response => {
         response.json()
         .then(res => {
-          setDetailsLoading(false);
           setDetails(res);
         }).catch((error) => {return error})
       }).catch((error) => {return error});
@@ -80,7 +77,7 @@ function App() {
           <h2 className="input-error">{errorStatus}</h2>
               {repos.map(renderRepo)}
           </div>
-          <RepoDetails details={details} loading={detailsLoading} />
+          <RepoDetails details={details}/>
       </div>
   );
 }
