@@ -24,4 +24,4 @@ function RepoDetails({ details }) {
     }
 }
 
-export default RepoDetails
+export default RepoDetails;
