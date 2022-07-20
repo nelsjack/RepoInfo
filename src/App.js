@@ -17,31 +17,11 @@ function App() {
     setErrorStatus("")
   }, [username]);
 
-  function handleSubmit(e) {
-    e.preventDefault();
-    searchRepos();
-  };
-
-function searchRepos() {
-    setLoading(true);
-    fetch(`https://api.github.com/users/${username}/repos`)
-      .then(response => {
-        response.json()
-        .then(res => {
-          setLoading(false);
-          if (Array.isArray(res)) {
-            setRepos(res)
-          } else {
-            setErrorStatus("User Not Found")
-          }
-        }).catch((error) => {return error})
-      }).catch((error) => {return error})
-  }
 
   return (
       <div className="landing-page-container">
         <h1 className="title">GitHub Repo Finder</h1>
-          <Form setUsername={setUsername} loading={loading} handleSubmit={handleSubmit}/>
+          <Form setUsername={setUsername} setLoading={setLoading} setErrorStatus={setErrorStatus} setRepos={setRepos} loading={loading} username={username}/>
           <ResultContainer repos={repos} errorStatus={errorStatus} username={username} setDetails={setDetails}/>
           <RepoDetails details={details}/>
       </div>
