@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import RepoDetails from "./RepoDetails"
 import Form from './Form';
-import './App.css';
 import ResultContainer from './ResultContainer';
+import './App.css';
 
 function App() {
   const [username, setUsername] = useState("");
@@ -19,7 +19,7 @@ function App() {
 
 
   return (
-      <div className="landing-page-container">
+    <div className="landing-page-container">
         <h1 className="title">GitHub Repo Finder</h1>
           <Form setUsername={setUsername} setLoading={setLoading} setErrorStatus={setErrorStatus} setRepos={setRepos} loading={loading} username={username}/>
           <ResultContainer repos={repos} errorStatus={errorStatus} username={username} setDetails={setDetails}/>
